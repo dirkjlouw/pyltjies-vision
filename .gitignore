@@ -1,0 +1,5 @@
+.env
+photos/*
+!photos/labels.example.csv
+/eval
+/vision

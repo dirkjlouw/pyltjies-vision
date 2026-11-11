@@ -1,0 +1,5 @@
+file,darts
+# One line per photo: the file, then the darts in the board in any order.
+IMG_0001.jpg,T20 S5 S1
+IMG_0002.heic,D16 25
+IMG_0003.jpg,S19 S19 T19
