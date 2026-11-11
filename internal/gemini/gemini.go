@@ -200,7 +200,7 @@ func parse(text string) (darts.Reading, error) {
 	if err := json.Unmarshal([]byte(text), &raw); err != nil {
 		return darts.Reading{}, fmt.Errorf("gemini answer isn't JSON: %w", err)
 	}
-	reading := darts.Reading{Notes: raw.Notes}
+	reading := darts.Reading{Darts: []darts.Seen{}, Notes: raw.Notes}
 	for _, seen := range raw.Darts {
 		d, err := darts.Parse(seen.Score)
 		if err != nil {

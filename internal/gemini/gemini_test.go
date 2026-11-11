@@ -69,8 +69,12 @@ func TestReadRetriesWhenRateLimited(t *testing.T) {
 		}
 		io.WriteString(w, answer(`{"darts":[]}`))
 	})
-	if _, err := c.Read(context.Background(), []byte("x"), "image/png"); err != nil {
+	reading, err := c.Read(context.Background(), []byte("x"), "image/png")
+	if err != nil {
 		t.Fatal(err)
+	}
+	if reading.Darts == nil {
+		t.Error("no darts is an empty list, not null, so the app can loop over it")
 	}
 	if calls != 3 {
 		t.Fatalf("calls %d", calls)
