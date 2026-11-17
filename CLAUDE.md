@@ -11,5 +11,5 @@ Rules for any person or AI agent changing this repo. Read PLAN.md first. This is
 - **PR description:** what changed, why, how it was tested, plus PR comments for anything a reviewer should look at.
 - **Public repo:** never commit keys, `.env`, photos, home network details, addresses, host names or personal email addresses. `photos/` is git-ignored except the example label file.
 - **Licences:** don't copy code or weights from Dart Sense (non-commercial, non-distributable) or DeepDarts (no licence). Anything added must be compatible with AGPL-3.0.
-- **Merging and deploying need the maintainer's go-ahead.** Never merge your own PR.
+- **Merging and deploying need the maintainer's go-ahead.** `main` is protected by a ruleset: a pull request with one code-owner approval and green CI, no force pushes, no deleting it. Only the maintainer, as admin, can bypass it, so the maintainer merges on GitHub. Agents never merge or bypass.
 - **Style:** standard library unless a dependency clearly earns its place. Plain words in messages and docs, sentence case.
